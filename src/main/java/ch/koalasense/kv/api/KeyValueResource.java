@@ -3,6 +3,7 @@ package ch.koalasense.kv.api;
 import ch.koalasense.kv.data.KeyValueEO;
 import io.quarkus.panache.common.Sort;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 import javax.ws.rs.GET;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @Path("/v1/key-value")
 @ApplicationScoped
 @Transactional
+@RolesAllowed("admin")
 public class KeyValueResource {
 
   @GET
@@ -43,5 +45,12 @@ public class KeyValueResource {
     kv.setUpdateTime(Instant.now());
     kv.persistAndFlush();
     return kv.value;
+  }
+
+  @GET
+  @Path("{key}/delete")
+  public String delete(@PathParam("key") String key) {
+    KeyValueEO.findByKey(key).ifPresent(kv -> kv.delete());
+    return key;
   }
 }
