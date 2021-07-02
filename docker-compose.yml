@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+
+  kv:
+    image: gaetancollaud/kv
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.native
+    ports:
+      - 8080
+#    environment:
+#      - "POSTGRES_URL=jdbc:postgresql://postgres:5432/sdm-looker"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+      - "POSTGRES_DB=postgres"
+
