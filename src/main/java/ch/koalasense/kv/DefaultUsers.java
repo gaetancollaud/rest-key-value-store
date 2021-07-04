@@ -12,6 +12,8 @@ public class DefaultUsers {
 
   @Transactional
   public void loadUsers(@Observes StartupEvent evt) {
-    UserEO.add("admin", "admin", "admin");
+    if (UserEO.find("username", "admin").firstResult() == null) {
+      UserEO.add("admin", "admin", "admin");
+    }
   }
 }
