@@ -1,4 +1,4 @@
-package ch.koalasense.kv.data;
+package net.collaud.kv.data;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.panache.common.Sort;

@@ -1,4 +1,4 @@
-package ch.koalasense.kv;
+package net.collaud.kv;
 
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Info;

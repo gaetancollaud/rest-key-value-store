@@ -1,7 +1,17 @@
 greeting:
   message: "hello"
 
+users:
+  default:
+    username: admin
+    password: admin
+
 quarkus:
+  http:
+    auth:
+      basic: true
+  swagger-ui:
+    always-include: true
   datasource:
     db-kind: postgresql
     username: postgres

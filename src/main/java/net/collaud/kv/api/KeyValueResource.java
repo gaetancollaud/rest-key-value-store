@@ -1,6 +1,6 @@
-package ch.koalasense.kv.api;
+package net.collaud.kv.api;
 
-import ch.koalasense.kv.data.KeyValueEO;
+import net.collaud.kv.data.KeyValueEO;
 import io.quarkus.panache.common.Sort;
 
 import javax.annotation.security.RolesAllowed;
@@ -17,7 +17,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Path("/v1/")
+@Path("v1")
 @ApplicationScoped
 @Transactional
 @RolesAllowed("admin")

@@ -1,4 +1,4 @@
-package ch.koalasense.kv.data;
+package net.collaud.kv.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

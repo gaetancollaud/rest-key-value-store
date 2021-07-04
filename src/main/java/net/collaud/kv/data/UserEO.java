@@ -1,4 +1,4 @@
-package ch.koalasense.kv.data;
+package net.collaud.kv.data;
 
 import io.quarkus.elytron.security.common.BcryptUtil;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
